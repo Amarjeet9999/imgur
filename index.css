@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: rgb(46, 48, 53);
+}
 .main {
   position: absolute;
   height: 395px;
@@ -241,9 +243,9 @@
 }
 
 .root {
-  height: 1000px;
   background-color: rgb(46, 48, 53);
   margin-top: 395px;
+  height: 100%;
 }
 
 .margintop {
@@ -253,7 +255,6 @@
 .feeds {
   width: 1008px;
   margin-top: 15px;
-  border: 2px solid green;
   margin: auto;
   display: flex;
   gap: 12px;
@@ -261,7 +262,17 @@
 
 .column {
   width: 240px;
-  border: 2px solid red;
   height: 150px;
   margin: auto;
+}
+
+.mainPostDiv {
+}
+
+.inneimgrDiv {
+  max-height: 400px;
+  max-width: 100%;
+}
+.inneimgrDiv img {
+  max-width: 100%;
 }

@@ -58,7 +58,7 @@ const data = [
 const exploreElem = document.getElementById("exploreElem");
 
 const addData = (el) => {
-  el.map((e, index) => {
+  el.forEach((e, index) => {
     let div = document.createElement("div");
     if (index === 0) div.setAttribute("class", "sliderCard1");
     else div.setAttribute("class", "sliderCard");
@@ -75,10 +75,57 @@ const addData = (el) => {
     b2.innerText = e.details;
     innerDiv.append(b1, b2);
     innerDiv.style.backgroundColor = e.color;
-    console.log(e.color);
     div.append(dummyDiv, innerDiv);
     exploreElem.append(div);
   });
 };
 
 addData(data);
+let page = 1;
+let postData = [];
+
+const fetchData = async (page) => {
+  try {
+    await fetch(
+      `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=L&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        postData = [...postData, ...res.results];
+        console.log("Data", postData);
+      });
+  } catch (err) {
+    console.log(err);
+  }
+  fillData(postData);
+};
+
+fetchData();
+
+let column1 = document.getElementById("column1");
+let column2 = document.getElementById("column2");
+let column3 = document.getElementById("column3");
+let column4 = document.getElementById("column4");
+
+const fillData = (el) => {
+  el.forEach((e, i) => {
+    let mainDiv = document.createElement("div");
+    mainDiv.setAttribute("class", "mainPostDiv");
+    let inneimgrDiv = document.createElement("div");
+    inneimgrDiv.setAttribute("class", "inneimgrDiv");
+    let img = document.createElement("img");
+    img.src = e.links.download;
+    inneimgrDiv.append(img);
+    mainDiv.append(inneimgrDiv);
+    // column1.append(mainDiv);
+    if (i < 5) {
+      column1.append(mainDiv);
+    } else if (i < 10) {
+      column2.append(mainDiv);
+    } else if (i < 15) {
+      column3.append(mainDiv);
+    } else {
+      column4.append(mainDiv);
+    }
+  });
+};
