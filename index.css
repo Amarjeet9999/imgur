@@ -6,6 +6,7 @@
 body {
   background-color: rgb(46, 48, 53);
 }
+
 .main {
   position: absolute;
   height: 395px;
@@ -245,7 +246,7 @@ body {
 .root {
   background-color: rgb(46, 48, 53);
   margin-top: 395px;
-  height: 100%;
+  height: auto;
 }
 
 .margintop {
@@ -265,14 +266,72 @@ body {
   height: 150px;
   margin: auto;
 }
+.column :hover {
+  transform: scale(1.009);
+}
 
 .mainPostDiv {
+  margin-bottom: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+.mainPostDiv :hover {
+  transform: none;
 }
 
 .inneimgrDiv {
-  max-height: 400px;
   max-width: 100%;
+  background-color: #474a51;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 .inneimgrDiv img {
   max-width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.inneimgrDiv img :hover {
+  display: hidden;
+}
+
+.bottomDiv {
+  background-color: #474a51;
+  border-bottom: 4px solid transparent;
+  border-radius: 0 0 5px 5px;
+  margin-top: 10px;
+  min-height: 40px;
+}
+
+.innerAction {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 5px;
+}
+.actions span {
+  margin: 0 2px;
+  color: rgb(143, 139, 139);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.boldDiv {
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  max-width: 100%;
+  max-height: 38px;
+  padding: 0 15px;
+  overflow: hidden;
 }

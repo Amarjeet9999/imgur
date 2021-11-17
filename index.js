@@ -115,17 +115,68 @@ const fillData = (el) => {
     inneimgrDiv.setAttribute("class", "inneimgrDiv");
     let img = document.createElement("img");
     img.src = e.links.download;
-    inneimgrDiv.append(img);
+    let bottomDiv = document.createElement("div");
+    bottomDiv.setAttribute("class", "bottomDiv");
+    let innerAction = document.createElement("div");
+    innerAction.setAttribute("class", "innerAction");
+
+    let b = document.createElement("p");
+    b.setAttribute("class", "boldDiv");
+    b.innerText = e?.description || e?.alt_description;
+
+    let firstAction = document.createElement("div");
+    let span1 = document.createElement("span");
+    span1.setAttribute("class", "material-icons");
+    span1.innerText = "arrow_upward";
+    let span2 = document.createElement("span");
+    span2.setAttribute("class", "material-icons");
+    span2.innerText = "arrow_downward";
+    let span3 = document.createElement("span");
+    span3.setAttribute("class", "likes");
+    span3.innerText = e.likes;
+    firstAction.append(span1, span3, span2);
+    firstAction.setAttribute("class", "actions");
+
+    let secondAction = document.createElement("div");
+    secondAction.setAttribute("class", "actions");
+    let span4 = document.createElement("span");
+    span4.setAttribute("class", "material-icons");
+    span4.innerText = "chat_bubble_outline";
+    let span5 = document.createElement("span");
+    span5.setAttribute("class", "likes");
+    span5.innerText = Math.abs(Math.floor(i + (10 * 25) / 5));
+    secondAction.append(span4, span5);
+
+    let thirdAction = document.createElement("div");
+    thirdAction.setAttribute("class", "actions");
+    let span6 = document.createElement("span");
+    span6.setAttribute("class", "material-icons");
+    span6.innerText = "visibility";
+    let span7 = document.createElement("span");
+    span7.setAttribute("class", "likes");
+    span7.innerText = Math.abs(Math.floor(i + (10 * 5) / 3));
+    thirdAction.append(span6, span7);
+
+    innerAction.append(firstAction, secondAction, thirdAction);
+    bottomDiv.append(b, innerAction);
+    inneimgrDiv.append(img, bottomDiv);
     mainDiv.append(inneimgrDiv);
-    // column1.append(mainDiv);
-    if (i < 5) {
+    if (i % 4 === 0) {
       column1.append(mainDiv);
-    } else if (i < 10) {
+    } else if (i % 3 === 0) {
       column2.append(mainDiv);
-    } else if (i < 15) {
+    } else if (i % 2 === 0) {
       column3.append(mainDiv);
     } else {
       column4.append(mainDiv);
     }
   });
+};
+
+window.onscroll = function () {
+  var difference = document.documentElement.scrollHeight - window.innerHeight;
+  var scrollposition = document.documentElement.scrollTop;
+  if (difference - scrollposition <= 2) {
+    fetchData(page++);
+  }
 };
