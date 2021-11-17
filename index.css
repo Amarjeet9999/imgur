@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  position: absolute;
+  height: 395px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url("https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png")
+    no-repeat;
+  background-size: cover;
+  padding-bottom: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mainFirst {
+  position: sticky;
+  padding: 15px;
+  display: flex;
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.left {
+  min-width: 360px;
+  position: relative;
+  display: inline-flex;
+}
+
+.left button {
+  min-width: auto;
+  margin: auto 20px;
+  position: relative;
+  background-color: #1bb76e;
+  box-shadow: 0 6px 10px 0 rgb(27 28 30 / 31%);
+  color: #fff;
+  height: 40px;
+  padding: 7px 14px 10px 9px;
+  text-transform: none;
+  user-select: none;
+  touch-action: manipulation;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.logo {
+  cursor: pointer;
+}
+.left button img {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.middle {
+  max-width: 550px;
+  margin: auto;
+  align-items: center;
+  flex: 1;
+  justify-content: space-around;
+  background: rgb(70, 68, 106);
+}
+.middle form {
+  display: flex;
+  background: rgb(70, 68, 106);
+  border-radius: 3px;
+}
+
+.middle form button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.btnImg {
+  background: transparent !important;
+  border: 1px solid transparent;
+
+  width: 100%;
+  outline: none;
+}
+.search {
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.textInput {
+  border: 1px solid transparent;
+  padding: 8px 35px 8px 10px;
+  border-radius: 3px;
+  width: 100%;
+  outline: 0 none;
+  opacity: 0.8;
+  min-height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #fff;
+  text-shadow: inherit;
+  -webkit-text-fill-color: inherit;
+  background: rgb(70, 68, 106);
+}
+
+.right {
+  min-width: 260px;
+  justify-content: flex-end;
+  display: flex;
+  color: white;
+  margin-left: 25px;
+}
+
+.right button {
+  background: #6432f9;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 12%);
+  padding: 0 10px 0 9px;
+  overflow: hidden;
+  margin: auto 0;
+  height: 35px;
+  line-height: 35px;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.rightFirst {
+  display: inline-flex;
+  margin: 0 10px;
+}
+.rightFirst img {
+  display: inline-flex;
+  margin: 0 5px;
+}
+
+.rightSecond {
+  display: flex;
+  align-items: center;
+}
+.rightSecond span {
+  font-weight: 800;
+  font-style: bold;
+}
+
+.profile {
+  height: 37px;
+  line-height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-color: rgb(69, 210, 175);
+}
+
+.textNav {
+  font-size: 24px;
+  font-family: Proxima Nova ExtraBold, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  color: #aed8ea;
+  text-align: center;
+  height: 34px;
+  font-weight: 700;
+}
+
+.exploreTag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exploreHead {
+  width: 1220px;
+  padding: 0px 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.exploreHead b {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(212, 207, 207);
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.exploreElem {
+  width: 1220px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+}
+
+.sliderCard {
+  height: 130px;
+  width: 110px;
+  margin-top: 10px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.sliderCard1 {
+  border-radius: 5px;
+  height: 130px;
+  width: 232px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+.innerDIv {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 5px 5px;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 5px;
+}
+
+.dummyDiv {
+  height: 70px;
+}
+
+.b1 {
+  color: white;
+}
+.b2 {
+  color: rgb(189, 189, 189);
+}
+
+.root {
+  height: 1000px;
+  background-color: rgb(46, 48, 53);
+  margin-top: 395px;
+}
+
+.margintop {
+  height: 50px;
+}
+
+.feeds {
+  width: 1008px;
+  margin-top: 15px;
+  border: 2px solid green;
+  margin: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.column {
+  width: 240px;
+  border: 2px solid red;
+  height: 150px;
+  margin: auto;
+}
