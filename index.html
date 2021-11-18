@@ -44,11 +44,15 @@
             class="textInput"
             type="text"
             placeholder="Images, #tags, @users oh my!"
+            id="query"
+            oninput="throttleFunction()"
           />
+
           <button>
             <span class="material-icons search">search</span>
           </button>
         </form>
+        <div class="searchSuggestion" id="searchSuggestion"></div>
       </div>
       <div class="right">
         <button>Go Ad-Free</button>

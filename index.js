@@ -92,7 +92,6 @@ const fetchData = async (page) => {
       .then((res) => res.json())
       .then((res) => {
         postData = [...postData, ...res.results];
-        console.log("Data", postData);
       });
   } catch (err) {
     console.log(err);
@@ -108,6 +107,10 @@ let column3 = document.getElementById("column3");
 let column4 = document.getElementById("column4");
 
 const fillData = (el) => {
+  removeAllChildNodes(column1);
+  removeAllChildNodes(column2);
+  removeAllChildNodes(column3);
+  removeAllChildNodes(column4);
   el.forEach((e, i) => {
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute("class", "mainPostDiv");
@@ -177,6 +180,51 @@ window.onscroll = function () {
   var difference = document.documentElement.scrollHeight - window.innerHeight;
   var scrollposition = document.documentElement.scrollTop;
   if (difference - scrollposition <= 2) {
-    fetchData(page++);
+    if (query !== "") {
+      fetchData(page++);
+    }
   }
 };
+
+// Adding Search Functionality
+var searchSuggestion = document.getElementById("searchSuggestion");
+var timerId;
+
+async function searchCharacter() {
+  let query = document.getElementById("query").value;
+  if (query.length <= 2) {
+    return false;
+  }
+  let res = await fetch(
+    `https://api.unsplash.com/search/photos?page=1&per_page=20&query=${query}&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
+  );
+  let data = await res.json();
+  return data.results;
+}
+
+function throttleFunction() {
+  if (timerId) {
+    return false;
+  }
+
+  timerId = setTimeout(() => {
+    main();
+    timerId = undefined;
+  }, 500);
+}
+
+// **********************************
+async function main() {
+  let character = await searchCharacter();
+  fillData([...character, ...data]);
+}
+
+const prevent = (e) => {
+  e.preventDefault();
+};
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
