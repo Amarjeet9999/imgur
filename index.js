@@ -87,7 +87,7 @@ let postData = [];
 const fetchData = async (page) => {
   try {
     await fetch(
-      `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=L&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
+      `https://api.unsplash.com/search/photos?page=${page}&per_page=40&query=L&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -114,7 +114,7 @@ const fillData = (el) => {
     let inneimgrDiv = document.createElement("div");
     inneimgrDiv.setAttribute("class", "inneimgrDiv");
     let img = document.createElement("img");
-    img.src = e.links.download;
+    img.src = e?.urls?.small;
     let bottomDiv = document.createElement("div");
     bottomDiv.setAttribute("class", "bottomDiv");
     let innerAction = document.createElement("div");

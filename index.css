@@ -25,13 +25,17 @@ body {
 }
 
 .mainFirst {
-  position: sticky;
+  position: fixed;
   padding: 15px;
   display: flex;
   width: 100%;
   z-index: 1000;
   text-align: center;
   margin: 0 auto;
+  top: 0;
+  background: url("https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png")
+    no-repeat;
+  box-shadow: 0px 0px 20px 5px #bbbaba;
 }
 
 .left {
@@ -176,6 +180,7 @@ body {
   text-align: center;
   height: 34px;
   font-weight: 700;
+  margin-top: auto;
 }
 
 .exploreTag {
