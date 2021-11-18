@@ -87,7 +87,7 @@ let postData = [];
 const fetchData = async (page) => {
   try {
     await fetch(
-      `https://api.unsplash.com/search/photos?page=${page}&per_page=40&query=L&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
+      `https://api.unsplash.com/search/photos?page=${page}&per_page=40&query=dog&client_id=WlWzYioYsw1MAtzuh30oNc7ROz--nua0jFHi0urNhvs`
     )
       .then((res) => res.json())
       .then((res) => {
@@ -99,7 +99,7 @@ const fetchData = async (page) => {
   fillData(postData);
 };
 
-fetchData();
+fetchData(page);
 
 let column1 = document.getElementById("column1");
 let column2 = document.getElementById("column2");
@@ -111,7 +111,7 @@ const fillData = (el) => {
   column2.innerHTML = null;
   column3.innerHTML = null;
   column4.innerHTML = null;
- 
+
   el.forEach((e, i) => {
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute("class", "mainPostDiv");
@@ -193,6 +193,7 @@ var timerId;
 
 async function searchCharacter() {
   let query = document.getElementById("query").value;
+  console.log(query)
   if (query.length <= 2) {
     return false;
   }
