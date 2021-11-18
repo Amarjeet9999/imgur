@@ -107,10 +107,11 @@ let column3 = document.getElementById("column3");
 let column4 = document.getElementById("column4");
 
 const fillData = (el) => {
-  removeAllChildNodes(column1);
-  removeAllChildNodes(column2);
-  removeAllChildNodes(column3);
-  removeAllChildNodes(column4);
+  column1.innerHTML = null;
+  column2.innerHTML = null;
+  column3.innerHTML = null;
+  column4.innerHTML = null;
+ 
   el.forEach((e, i) => {
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute("class", "mainPostDiv");
@@ -223,8 +224,8 @@ const prevent = (e) => {
   e.preventDefault();
 };
 
-function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
+// function removeAllChildNodes(parent) {
+//   while (parent.firstChild) {
+//     parent.removeChild(parent.firstChild);
+//   }
+// }
