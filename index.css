@@ -9,7 +9,7 @@ body {
 
 .main {
   position: absolute;
-  height: 395px;
+  height: 395px !important;
   top: 0;
   left: 0;
   right: 0;
@@ -202,6 +202,7 @@ body {
   font-weight: 800;
   cursor: pointer;
   padding: 0 10px;
+  font-family: Proxima Nova Regular, Helvetica Neue, Helvetica, Arial;
 }
 
 .exploreElem {
@@ -250,12 +251,13 @@ body {
 
 .root {
   background-color: rgb(46, 48, 53);
-  margin-top: 395px;
   height: auto;
-}
-
-.margintop {
-  height: 50px;
+  position: absolute;
+  top: 400px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .feeds {
@@ -264,6 +266,7 @@ body {
   margin: auto;
   display: flex;
   gap: 12px;
+  margin-top: 20px;
 }
 
 .column {
@@ -347,4 +350,25 @@ body {
   /* border: 1px solid rgb(207, 207, 207); */
   position: absolute;
   width: 538px;
+}
+
+.footerDiv {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgb(51, 53, 59);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex span {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(164, 169, 178);
+  margin-left: 20px;
+  padding: 15px;
 }
